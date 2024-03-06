@@ -6,8 +6,32 @@
 </head>
 
 <body>
+    <p>Coin Toss Game</p>
+    <p>Guess</p>
+    <button onclick="
+        guess = 'tails';
+        check(guess);
+    ">Tails</button>
+    <button onclick="
+        guess = 'heads';
+        check(guess);
+    ">Heads</button>
     <script>
-        let rand = Math.random()
+        let guess = '';
+        function check(guess) {
+            let rand = Math.random();
+            console.log(rand);
+            if (rand > 0.5) {
+                // console.log('heads');
+                result = 'heads';
+            }
+            else {
+                // console.log('tails');
+                result = 'tails';
+            }
+
+            guess === result ? alert(`you won, your and ans = ${guess}`) : alert('you lost' + `You move: ${guess} , Ans ${result}`);
+        }
     </script>
 </body>
 
