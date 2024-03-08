@@ -11,41 +11,17 @@
     <button onclick="
         Random_number();
         userMove = 'Rock';
-        if(userMove === compMove){
-            alert(`Draw: Both used${userMove}`);
-        }
-        else if(compMove === 'Paper'){
-            alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}`);
-        }
-        else if(compMove==='Scissors'){
-            alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}`);
-        }
+        check(compMove,userMove)
     ">Rock</button>
     <button onclick="
-    Random_number()
+        Random_number()
         userMove = 'Paper';
-        if(userMove === compMove){
-            alert(`Draw: Both used${userMove}`);
-        }
-        else if(compMove === 'Scissors'){
-            alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}`);
-        }
-        else if(compMove==='Rock'){
-            alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}`);
-        }
+        check(compMove,userMove)
     ">Paper</button>
     <button onclick="
-    Random_number()
+        Random_number()
         userMove = 'Scissors';
-        if(userMove === compMove){
-            alert(`Draw: Both used${userMove}`);
-        }
-        else if(compMove === 'Rock'){
-            alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}`);
-        }
-        else if(compMove==='Paper'){
-            alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}`);
-        }
+        check(compMove,userMove)
     ">Scissors</button>
     <script>
         let compMove = ''
@@ -64,6 +40,30 @@
             }
             else if (Random >= 0 && Random <= 1) {
                 compMove = 'Scissors'
+            }
+            return compMove;
+        }
+        function check(compMove, userMove) {
+            if (userMove === compMove) {
+                alert(`Draw: Both used${userMove}`);
+            }
+            else if ((compMove === 'Rock') && (userMove === 'Scissors')) {
+                alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}`);
+            }
+            else if ((compMove === 'Rock') && (userMove === 'Paper')) {
+                alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}`);
+            }
+            else if ((compMove === 'Paper') && (userMove === 'Scissors')) {
+                alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}`);
+            }
+            else if ((compMove === 'Paper') && (userMove === 'Rock')) {
+                alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}`);
+            }
+            else if ((compMove === 'Scissors') && (userMove === 'Rock')) {
+                alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}`);
+            }
+            else if ((compMove === 'Scissors') && (userMove === 'Paper')) {
+                alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}`);
             }
         }
     </script>
