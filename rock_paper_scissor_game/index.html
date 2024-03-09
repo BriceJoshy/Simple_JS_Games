@@ -32,13 +32,32 @@
         score.wins=0;
         score.draw =0;
         score.loss = 0;
+        localStorage.removeItem('score')
     ">Reset Score</button>
     <script>
-        const score = {
+        let score = JSON.parse(localStorage.getItem('score')) ||
+        {
             wins: 0,
             loss: 0,
             draw: 0
-        };
+        }
+
+        // if (score === null) {
+        //     score = {
+        //         wins: 0,
+        //         loss: 0,
+        //         draw: 0
+        //     }
+        // }
+        // if (!score) {
+        //     score = {
+        //         wins: 0,
+        //         loss: 0,
+        //         draw: 0
+        //     }
+        // }
+        // console.log(JSON.parse(localStorage.getItem('score')));
+        console.log(score)
         let compMove = "";
         let userMove = "";
         const Rock = 1;
@@ -79,7 +98,11 @@
                 score.loss += 1;
                 alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}\n Score: Wins-${score.wins}, Loss-${score.loss},Draw-${score.draw}`);
             }
+            // saving values local storage
+            //  only support strings
+            localStorage.setItem('score', JSON.stringify(score))
         }
+
     </script>
 </body>
 
