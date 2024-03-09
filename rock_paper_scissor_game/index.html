@@ -28,7 +28,17 @@
     ">
         Scissors
     </button>
+    <button onclick="
+        score.wins=0;
+        score.draw =0;
+        score.loss = 0;
+    ">Reset Score</button>
     <script>
+        const score = {
+            wins: 0,
+            loss: 0,
+            draw: 0
+        };
         let compMove = "";
         let userMove = "";
         const Rock = 1;
@@ -48,19 +58,26 @@
         }
         function check(compMove, userMove) {
             if (userMove === compMove) {
-                alert(`Draw: Both used${userMove}`);
+                score.draw += 1;
+                alert(`Draw: Both used${userMove}\n Score: Wins-${score.wins}, Loss-${score.loss},Draw-${score.draw}`);
             } else if (compMove === "Rock" && userMove === "Scissors") {
-                alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}`);
+                score.loss += 1;
+                alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}\n Score: Wins-${score.wins}, Loss-${score.loss},Draw-${score.draw}`);
             } else if (compMove === "Rock" && userMove === "Paper") {
-                alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}`);
+                score.wins += 1;
+                alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}\n Score: Wins-${score.wins}, Loss-${score.loss},Draw-${score.draw}`);
             } else if (compMove === "Paper" && userMove === "Scissors") {
-                alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}`);
+                score.wins += 1;
+                alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}\n Score: Wins-${score.wins}, Loss-${score.loss},Draw-${score.draw}`);
             } else if (compMove === "Paper" && userMove === "Rock") {
-                alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}`);
+                score.loss += 1;
+                alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}\n Score: Wins-${score.wins}, Loss-${score.loss},Draw-${score.draw}`);
             } else if (compMove === "Scissors" && userMove === "Rock") {
-                alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}`);
+                score.wins += 1;
+                alert(`You Won!, You used: ${userMove} and Comp used: ${compMove}\n Score: Wins-${score.wins}, Loss-${score.loss},Draw-${score.draw}`);
             } else if (compMove === "Scissors" && userMove === "Paper") {
-                alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}`);
+                score.loss += 1;
+                alert(`You Lost!, You used: ${userMove} and Comp used: ${compMove}\n Score: Wins-${score.wins}, Loss-${score.loss},Draw-${score.draw}`);
             }
         }
     </script>
