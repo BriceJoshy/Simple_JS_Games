@@ -11,14 +11,33 @@
             name: 'socks',
             price: 1090
         };
-        console.log(product);
-        console.log(product.name);
-        product.name = 'brice';
-        console.log(product.name);
-        product.new = 'new stuff';
-        console.log(product);
-        delete product.new;
-        console.log(product);
+        // console.log(product);
+        // console.log(product.name);
+        // product.name = 'brice';
+        // console.log(product.name);
+        // product.new = 'new stuff';
+        // console.log(product);
+        // delete product.new;
+        // console.log(product);
+        const product2 = {
+            name: 'john',
+            'string-name': 3,
+            rating: {
+                super: 'noce',
+                nice: 'super'
+            },
+            fun: function Object() {
+                console.log('function in an object')
+            }
+        };
+        console.log(product2);
+        console.log(product2['name']);
+        console.log(product2['string-name']);
+        console.log(product2.rating);
+        console.log(product2.rating.nice);
+        product2.fun();
+
+        // Json Convertion
     </script>
 </body>
 
