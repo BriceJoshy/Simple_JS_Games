@@ -6,43 +6,60 @@
 </head>
 
 <body>
-    <script>
-        const product = {
-            name: 'socks',
-            price: 1090
-        };
-        // console.log(product);
-        // console.log(product.name);
-        // product.name = 'brice';
-        // console.log(product.name);
-        // product.new = 'new stuff';
-        // console.log(product);
-        // delete product.new;
-        // console.log(product);
-        const product2 = {
-            name: 'john',
-            'string-name': 3,
-            rating: {
-                super: 'noce',
-                nice: 'super'
-            },
-            fun: function Object() {
-                console.log('function in an object')
-            }
-        };
-        console.log(product2);
-        console.log(product2['name']);
-        console.log(product2['string-name']);
-        console.log(product2.rating);
-        console.log(product2.rating.nice);
-        product2.fun();
+    <script>/*
+const product = {
+name: 'socks',
+price: 1090
+};
+// console.log(product);
+// console.log(product.name);
+// product.name = 'brice';
+// console.log(product.name);
+// product.new = 'new stuff';
+// console.log(product);
+// delete product.new;
+// console.log(product);
+const product2 = {
+name: 'john',
+'string-name': 3,
+rating: {
+super: 'noce',
+nice: 'super'
+},
+fun: function Object() {
+console.log('function in an object')
+}
+};
+console.log(product2);
+console.log(product2['name']);
+console.log(product2['string-name']);
+console.log(product2.rating);
+console.log(product2.rating.nice);
+product2.fun();
 
-        // Json Convertion
-        thing = JSON.stringify(product2);
-        console.log(thing);
-        // JS Convertion
-        thing2 = JSON.parse(thing);
-        console.log(thing2);
+// Json Convertion
+thing = JSON.stringify(product2);
+console.log(thing);
+// JS Convertion
+thing2 = JSON.parse(thing);
+console.log(thing2);
+*/
+
+
+        // JS Auto-Boxing
+        console.log('hello'.length)
+        console.log('hello'.toUpperCase())
+        const object = {
+            message: 'Good JOb!',
+            name: 1090
+        }
+
+        // const message = object.message
+        // shortcut - DESTRUCTURING
+        const { message, name } = object
+        console.log(message, name)
+
+
     </script>
 </body>
 
