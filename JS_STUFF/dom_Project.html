@@ -9,13 +9,29 @@
     <p>YouTube Subscribe Button</p>
     <button class="subscribe-Button" , onclick="
         subscribe_Check()
-        
     ">Subscribe</button>
+    <br><br><br>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = Free Shipping</p>
+    <input placeholder="Cost of order" , class="input_order">
+    <button onclick="
+        const cost_of_order = document.querySelector('.input_order')
+        let cost = cost_of_order.value;
+        // console.log(typeof Number(cost))
+        calculate(Number(cost));
+    ">Calculate
+    </button>
+    <p class="result"></p>
     <script>
         function subscribe_Check() {
             const subs_Button = document.querySelector('.subscribe-Button')
             subs_Button.innerText === 'Subscribe' ? subs_Button.innerText = 'Subscribed' : subs_Button.innerText = 'Subscribe'
+        }
+        function calculate(cost) {
+            const result_text = document.querySelector('.result');
 
+            cost <= 40 ? result_text.innerText = `$${cost + 10}` : result_text.innerText = `$${cost}`
         }
     </script>
 </body>
