@@ -14,23 +14,33 @@
     <p>Amazon Shipping Calculator</p>
     <p>Orders under $40 = +$10 shipping</p>
     <p>Orders over $40 = Free Shipping</p>
-    <input placeholder="Cost of order" , class="input_order">
+    <input placeholder="Cost of order" onkeydown="
+        EnterKeyFunction(event.key)
+    " class="input_order">
     <button onclick="
-        const cost_of_order = document.querySelector('.input_order')
-        let cost = cost_of_order.value;
+        
         // console.log(typeof Number(cost))
-        calculate(Number(cost));
+        calculate();
     ">Calculate
     </button>
     <p class="result"></p>
     <script>
+
+        // Function for the Enter key pressed for the Calculate 
+        function EnterKeyFunction(e) {
+            event.key === 'Enter' ? calculate() : {}
+        }
+
+        // Function for the Subscribe button  
         function subscribe_Check() {
             const subs_Button = document.querySelector('.subscribe-Button')
             subs_Button.innerText === 'Subscribe' ? subs_Button.innerText = 'Subscribed' : subs_Button.innerText = 'Subscribe'
         }
-        function calculate(cost) {
+        // Function for calculating the total cost 
+        function calculate() {
+            const cost_of_order = document.querySelector('.input_order')
+            let cost = Number(cost_of_order.value);
             const result_text = document.querySelector('.result');
-
             cost <= 40 ? result_text.innerText = `$${cost + 10}` : result_text.innerText = `$${cost}`
         }
     </script>
