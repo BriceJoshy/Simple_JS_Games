@@ -3,7 +3,7 @@
 
 <head>
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rock_paper_scissor_game/style.css">
 </head>
 
 <body>
@@ -13,19 +13,19 @@
         userMove = 'Rock';
         check(Random_number(),userMove);
     " class="move-button">
-        <img src="images/rock.png" alt="Couldn't load image">
+        <img src="rock_paper_scissor_game/images/rock.png" alt="Couldn't load image">
     </button>
     <button onclick="
         userMove = 'Paper';
         check(Random_number(),userMove);
     " class="move-button">
-        <img src="images/paper.png" alt="Couldn't load image">
+        <img src="rock_paper_scissor_game/images/paper.png" alt="Couldn't load image">
     </button>
     <button onclick="
         userMove = 'Scissors';
         check(Random_number(),userMove);
     " class="move-button">
-        <img src="images/scissors.png" alt="Couldn't load image">
+        <img src="rock_paper_scissor_game/images/scissors.png" alt="Couldn't load image">
     </button>
     <p class="Result"></p>
     <p class="Moves"></p>
@@ -114,17 +114,17 @@
         const Moves = document.querySelector('.Moves');
         function matchDraw(compMove, userMove) {
             MatchResult.innerHTML = 'Match Draw';
-            Moves.innerHTML = `you <img src="images/${userMove}.png" alt="No"> : <img src="images/${compMove}.png" alt=""> computer`;
+            Moves.innerHTML = `you <img src="rock_paper_scissor_game/images/${userMove}.png" alt="No"> : <img src="rock_paper_scissor_game/images/${compMove}.png" alt=""> computer`;
             ScoreBoard.innerHTML = `Wins:${score.wins}, Loss:${score.loss}, Draw:${score.draw}`
         }
         function matchWin(compMove, userMove) {
             MatchResult.innerHTML = 'You Win!';
-            Moves.innerHTML = `you <img src="images/${userMove}.png" alt="No"> : <img src="images/${compMove}.png" alt=""> computer`;
+            Moves.innerHTML = `you <img src="rock_paper_scissor_game/images/${userMove}.png" alt="No"> : <img src="rock_paper_scissor_game/images/${compMove}.png" alt=""> computer`;
             ScoreBoard.innerHTML = `Wins:${score.wins}, Loss:${score.loss}, Draw:${score.draw}`
         }
         function matchLoss(compMove, userMove) {
             MatchResult.innerHTML = 'You Lose!';
-            Moves.innerHTML = `you <img src="images/${userMove}.png" alt="No"> : <img src="images/${compMove}.png" alt=""> computer`;
+            Moves.innerHTML = `you <img src="rock_paper_scissor_game/images/${userMove}.png" alt="No"> : <img src="rock_paper_scissor_game/images/${compMove}.png" alt=""> computer`;
             ScoreBoard.innerHTML = `Wins:${score.wins}, Loss:${score.loss}, Draw:${score.draw}`
         }
     </script>
