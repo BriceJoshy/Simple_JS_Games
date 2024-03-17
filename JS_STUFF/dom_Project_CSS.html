@@ -3,23 +3,59 @@
 
 <head>
     <title>Dom Project</title>
+    <style>
+        /* Adding the CSS stuff */
+        body {
+            font-family: Arial;
+        }
+
+        .subscribe-button {
+            background-color: black;
+            color: white;
+            border: none;
+            /* TRBL */
+            padding: 10px 15px 10px 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .is-subscribed {
+            background-color: rgb(240, 240, 240);
+            color: black
+        }
+
+        .css-input-order {
+            font-size: 15px;
+            padding: 10px;
+        }
+
+        .calculate-button {
+            color: white;
+            background-color: rgb(1, 128, 1);
+            border: none;
+            font-size: 15px;
+            padding: 12px 15px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <p>YouTube Subscribe Button</p>
-    <button class="subscribe-Button" , onclick="
+    <button class="js-subscribe-Button subscribe-button" , onclick="
         subscribe_Check()
     ">Subscribe</button>
-    <br><br><br>
     <p>Amazon Shipping Calculator</p>
     <p>Orders under $40 = +$10 shipping</p>
     <p>Orders over $40 = Free Shipping</p>
     <input placeholder="Cost of order" onkeydown="
         EnterKeyFunction(event.key)
-    " class="input_order">
-    <button onclick="
+    " class="input_order  css-input-order">
+    <button class="calculate-button" onclick="
         
-        // console.log(typeof Number(cost))
+        // console.log(typeof Number( cost))
         calculate();
     ">Calculate
     </button>
@@ -33,15 +69,29 @@
 
         // Function for the Subscribe button  
         function subscribe_Check() {
-            const subs_Button = document.querySelector('.subscribe-Button')
-            subs_Button.innerText === 'Subscribe' ? subs_Button.innerText = 'Subscribed' : subs_Button.innerText = 'Subscribe'
+            const subs_Button = document.querySelector('.js-subscribe-Button')
+            if (subs_Button.innerText === 'Subscribe') {
+                subs_Button.innerText = 'Subscribed';
+                subs_Button.classList.add('is-subscribed')
+            }
+            else {
+                subs_Button.innerText = 'Subscribe';
+                subs_Button.classList.remove('is-subscribed')
+            }
+
         }
         // Function for calculating the total cost 
         function calculate() {
             const cost_of_order = document.querySelector('.input_order')
-            let cost = Number(cost_of_order.value);
-            const result_text = document.querySelector('.result');
-            cost <= 40 ? result_text.innerText = `$${cost + 10}` : result_text.innerText = `$${cost}`
+            if (isNaN(Number(cost_of_order.value))) {
+                alert('Enter a valid number!');
+            }
+            else {
+                let cost = Number(cost_of_order.value);
+                const result_text = document.querySelector('.result');
+                cost <= 40 ? result_text.innerText = `$${cost + 10}` : result_text.innerText = `$${cost}`
+            }
+
         }
     </script>
 </body>
