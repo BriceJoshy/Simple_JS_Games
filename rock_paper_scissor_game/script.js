@@ -61,6 +61,31 @@ document
     check(Random_number(), "Scissors");
   });
 
+document.querySelector(".js-reset-button").addEventListener("click", () => {
+  score.wins = 0;
+  score.draw = 0;
+  score.loss = 0;
+  localStorage.removeItem("score");
+  updateScoreBoard();
+  alert("Score Reset");
+});
+
+document.querySelector(".js-autoplay-button").addEventListener("click", () => {
+  autoPlay();
+});
+
+// When i click 'r', 'p', 's' moves play
+
+document.body.addEventListener("keydown", (event) => {
+  console.log(event.key);
+  if (event.key === "r" || event.key === "R") {
+    check(Random_number(), "Rock");
+  } else if (event.key === "p" || event.key === "P") {
+    check(Random_number(), "Paper");
+  } else if (event.key === "s" || event.key === "S")
+    check(Random_number(), "Scissors");
+});
+
 function check(compMove, userMove) {
   if (userMove === compMove) {
     score.draw += 1;
