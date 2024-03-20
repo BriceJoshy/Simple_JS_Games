@@ -43,6 +43,24 @@ function Random_number() {
   }
   return compMove;
 }
+// Event Listeners for the Buttons
+
+document.querySelector(".js-rock-move-button").addEventListener("click", () => {
+  check(Random_number(), "Rock");
+});
+
+document
+  .querySelector(".js-paper-move-button")
+  .addEventListener("click", () => {
+    check(Random_number(), "Paper");
+  });
+
+document
+  .querySelector(".js-scissor-move-button")
+  .addEventListener("click", () => {
+    check(Random_number(), "Scissors");
+  });
+
 function check(compMove, userMove) {
   if (userMove === compMove) {
     score.draw += 1;
