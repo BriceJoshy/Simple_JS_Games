@@ -94,7 +94,7 @@ let interval;
 function autoPlay() {
   if (!isAutoPlaying) {
     alert("Game is Starting!!");
-    interval = setInterval(function () {
+    interval = setInterval(() => {
       check(Random_number(), Random_number());
     }, 1000);
     isAutoPlaying = true;
