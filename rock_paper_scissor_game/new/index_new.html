@@ -29,14 +29,15 @@
     <p class="Result"></p>
     <p class="Moves"></p>
     <p class="ScoreBoard"></p>
-    <p><button onclick="
+    <button onclick="
         score.wins=0;
         score.draw =0;
         score.loss = 0;
         localStorage.removeItem('score');
         updateScoreBoard();
-    " class="reset-button">Reset Score</button></p>
+    " class="reset-button">Reset Score</button>
 
+    <button class="js-autoplay-button">Auto Play</button>
     <script src="script.js">
 
     </script>
