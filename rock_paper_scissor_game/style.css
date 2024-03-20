@@ -43,10 +43,24 @@ img {
 }
 
 .reset-button {
-  background-color: white;
+  background-color: rgb(255, 179, 0);
+  color: black;
   border: none;
   height: 40px;
-  width: 100px;
-  font: 15px Arial;
+  width: 120px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.js-autoplay-button {
+  background-color: rgb(255, 179, 0);
+  color: black;
+  border: none;
+  height: 40px;
+  width: 120px;
+  font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
 }

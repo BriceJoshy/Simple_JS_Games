@@ -75,16 +75,32 @@ const MatchResult = document.querySelector(".Result");
 const Moves = document.querySelector(".Moves");
 function matchDraw(compMove, userMove) {
   MatchResult.innerHTML = "Match Draw";
-  Moves.innerHTML = `you <img src="rock_paper_scissor_game/images/${userMove}.png" alt="No"> : <img src="rock_paper_scissor_game/images/${compMove}.png" alt=""> computer`;
+  Moves.innerHTML = `you <img src="images/${userMove}.png" alt="No"> : <img src="images/${compMove}.png" alt=""> computer`;
   ScoreBoard.innerHTML = `Wins:${score.wins}, Loss:${score.loss}, Draw:${score.draw}`;
 }
 function matchWin(compMove, userMove) {
   MatchResult.innerHTML = "You Win!";
-  Moves.innerHTML = `you <img src="rock_paper_scissor_game/images/${userMove}.png" alt="No"> : <img src="rock_paper_scissor_game/images/${compMove}.png" alt=""> computer`;
+  Moves.innerHTML = `you <img src="images/${userMove}.png" alt="No"> : <img src="images/${compMove}.png" alt=""> computer`;
   ScoreBoard.innerHTML = `Wins:${score.wins}, Loss:${score.loss}, Draw:${score.draw}`;
 }
 function matchLoss(compMove, userMove) {
   MatchResult.innerHTML = "You Lose!";
-  Moves.innerHTML = `you <img src="rock_paper_scissor_game/images/${userMove}.png" alt="No"> : <img src="rock_paper_scissor_game/images/${compMove}.png" alt=""> computer`;
+  Moves.innerHTML = `you <img src="images/${userMove}.png" alt="No"> : <img src="images/${compMove}.png" alt=""> computer`;
   ScoreBoard.innerHTML = `Wins:${score.wins}, Loss:${score.loss}, Draw:${score.draw}`;
+}
+
+let isAutoPlaying = false;
+let interval;
+function autoPlay() {
+  if (!isAutoPlaying) {
+    alert("Game is Starting!!");
+    interval = setInterval(function () {
+      check(Random_number(), Random_number());
+    }, 1000);
+    isAutoPlaying = true;
+  } else {
+    clearInterval(interval);
+    isAutoPlaying = false;
+    alert("Game Stopped!!");
+  }
 }

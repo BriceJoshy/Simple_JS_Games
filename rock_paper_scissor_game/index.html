@@ -35,9 +35,12 @@
         score.loss = 0;
         localStorage.removeItem('score');
         updateScoreBoard();
+        alert('Score Reset')
     " class="reset-button">Reset Score</button>
 
-    <button class="js-autoplay-button">Auto Play</button>
+    <button class="js-autoplay-button" onclick="
+        autoPlay();
+    ">Auto Play</button>
     <script src="script.js">
 
     </script>
